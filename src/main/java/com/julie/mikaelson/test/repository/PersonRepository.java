@@ -8,4 +8,13 @@ import com.julie.mikaelson.test.model.Person;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
 	List<Person> findByLastname(String lastname);
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
