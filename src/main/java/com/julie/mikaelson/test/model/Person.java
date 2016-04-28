@@ -1,5 +1,8 @@
 package com.julie.mikaelson.test.model;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,17 +20,69 @@ public class Person {
 	
 	private String fullname ;
 	private String password ;
-	
+	private Date birthday;
 	private String lastname ;
 	
+	private String email;
+	
+	@Column(name="COMPANY_ADDRESS")
+	private Long companyAddress ;
+	
+	
+	
+	
+	
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Long getCompanyAddress() {
+		return companyAddress;
+	}
+
+	public void setCompanyAddress(Long companyAddress) {
+		this.companyAddress = companyAddress;
+	}
+
 	public Person() {
+		
 	}
 	
-	public Person(String fullname, String password, String lastname) {
+	public Person(String fullname, String password, String lastname,Date birthday) {
 		super();
 		this.fullname = fullname;
 		this.password = password;
 		this.lastname = lastname;
+		this.birthday = birthday;
+	}
+	
+	
+	
+	
+
+	public Person(String fullname, String password, Date birthday,
+			String lastname, String email, Long companyAddress) {
+		super();
+		this.fullname = fullname;
+		this.password = password;
+		this.birthday = birthday;
+		this.lastname = lastname;
+		this.email = email;
+		this.companyAddress = companyAddress;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	/**
@@ -78,14 +133,16 @@ public class Person {
 		this.id = id;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "Person [name=" + fullname + ", password=" + password + ", id=" + id
-				+ "]";
+		return "Person [fullname=" + fullname + ", password=" + password
+				+ ", birthday=" + birthday + ", lastname=" + lastname
+				+ ", email=" + email + ", companyAddress=" + companyAddress
+				+ ", id=" + id + "]";
 	}
+
+	
+
 	
 	
 	
